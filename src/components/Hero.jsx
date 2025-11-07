@@ -1,31 +1,22 @@
+import React from 'react';
 import Spline from '@splinetool/react-spline';
 
-export default function Hero() {
+export default function Hero({ onOrderNow }) {
   return (
-    <section id="home" className="relative min-h-[90vh] w-full overflow-hidden">
-      {/* Spline Scene */}
+    <section className="relative h-[70vh] min-h-[480px]">
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/8b7S8k5XVf7wQj5q/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent pointer-events-none" />
 
-      {/* Gradient Overlay - non-blocking */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-white/20 to-white/80 dark:from-black/70 dark:via-black/10 dark:to-black/90" />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28">
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/10 px-3 py-1 text-xs font-medium text-black/70 dark:text-white/70 backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400 animate-pulse" />
-            Introducing Polar — AI Systems & Automation
-          </span>
-          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-            Building next‑gen AI products, n8n automations, and custom LLMs
-          </h1>
-          <p className="mt-5 text-lg text-black/70 dark:text-white/70 max-w-2xl">
-            We design, build, and ship production‑grade AI solutions — from autonomous agents and custom model fine‑tuning to enterprise workflow automation.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="inline-flex items-center rounded-md bg-black text-white dark:bg-white dark:text-black px-5 py-3 text-sm font-medium shadow hover:shadow-lg transition">Start a Project</a>
-            <a href="#services" className="inline-flex items-center rounded-md border border-black/10 dark:border-white/20 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition">Explore Services</a>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-end pb-12">
+        <div className="bg-white/80 backdrop-blur rounded-xl p-6 md:p-8 shadow-xl border border-white/70">
+          <p className="text-emerald-700 font-medium tracking-wide">Welcome to Polar Bistro</p>
+          <h1 className="mt-1 text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">Nordic-inspired cuisine, crafted with warmth</h1>
+          <p className="mt-3 text-gray-600 max-w-2xl">Sustainably sourced seafood, wood-fired specialties, and seasonal produce. Dine in our cozy space or order for pickup.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <button onClick={onOrderNow} className="px-5 py-3 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-colors">Order now</button>
+            <a href="#menu" className="px-5 py-3 rounded-md border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors">Explore menu</a>
           </div>
         </div>
       </div>
